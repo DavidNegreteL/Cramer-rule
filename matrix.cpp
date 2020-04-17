@@ -2,17 +2,19 @@
 #include<iostream>
 #include<math.h>
 #include <iostream> 
+#include <locale.h>
 using namespace std; 
 void function1(double[][3], double[]); 
 void function2(double[][3], double[]); 
 int main() 
 
 { 
+	setlocale(LC_CTYPE, "Spanish");
 	char d; 
 	double a[3][3]; 
 	double b[3]; 
 	int n=0; 
-	cout << " Cuantas ecuaciones son en el sistema? "; 
+	cout <<"¿Cuántas ecuaciones son en el sistema?: "; 
 	while (n != 2 && n != 3) 
 	{ 
 	cin >>n; 
@@ -25,7 +27,7 @@ int main()
 			cout << "a21x1 + a22x2 + a23x3 = b2"<<endl; 
 			cout << "a31x1 + a32x2 + a33x3 = b3"<<endl; 
 			break; 
-	default: cout << "Solo puedo calcular sistemas de 2 o 3 ecuaciones:" ; 
+	default: cout << "Sólo puedo calcular sistemas de 2 o 3 ecuaciones:" ; 
 			break; 
 	} 
 	}
@@ -33,7 +35,7 @@ int main()
 	{ 
 		for (int j=0; j<n; j++) 
 		{ 
-			cout << "DIgita a[" << i +1 << "][" << j+1 << "]:"; 
+			cout << "Digita a[" << i +1 << "][" << j+1 << "]:"; 
 			cin >> a[i][j]; 
 		} 
 	} 
